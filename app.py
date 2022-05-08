@@ -1,12 +1,12 @@
 # from crypt import methopythonds
 from flask import Flask,render_template,request
-import pickle
 import pandas as pd
+import pickle
 
 application=Flask(__name__)
 
 normal_model=pickle.load(open('Scale_model.pkl','rb'))  
-knn_model=pickle.load(open('KNN_model.pkl',"rb"))
+knn_model=pickle.load(open('K_model.pkl',"rb"))
 
 @application.route("/")
 def home():
