@@ -2,12 +2,12 @@
 from flask import Flask,render_template,request
 import pickle
 import pandas as pd
-import artifacts
+
 application=Flask(__name__)
 
+normal_model=pickle.load(open('Scale_model.pkl','rb'))  
+knn_model=pickle.load(open('KNN_model.pkl',"rb"))
 
-normal_model=pickle.load(open(r'E:\10.python\project\advertiment_prediction\advertiment-subscription-prediction\Normal.pkl',"rb"))  # Normal Scaling Apply model load
-knn_model=pickle.load(open(r'E:\10.python\project\advertiment_prediction\advertiment-subscription-prediction\KNN_model.pkl',"rb"))
 @application.route("/")
 def home():
     
